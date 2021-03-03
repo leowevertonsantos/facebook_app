@@ -1,15 +1,24 @@
+import 'package:facebook_app/config/palette.dart';
+import 'package:facebook_app/screens/home.screen.dart';
+import 'package:facebook_app/screens/nav_screen.dart';
 import 'package:flutter/material.dart';
 
-main() {
-  runApp(AppWidget());
+void main() {
+  runApp(MyApp());
 }
 
-class AppWidget extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Facebook',
-      home: Scaffold(),
+      title: 'Flutter Facebook UI',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        scaffoldBackgroundColor: Palette.scaffold,
+      ),
+      home: NavScreen(),
     );
   }
 }
